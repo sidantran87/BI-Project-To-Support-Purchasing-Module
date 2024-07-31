@@ -36,11 +36,24 @@ In the contemporary business landscape, leveraging data effectively is pivotal f
 # 3. KPI Analysis
 ## Inventory Management:
 
-- Question 1: What is the status of the specific product in terms of quality, quantity, and location?
-- Question 2: Do we need to make a purchase for the specific product?
-- Question 3: What is the status of the product in terms of current quantity, safety stock?
+### Question 1: What is the status of the specific product in terms of quality, quantity, and location?
 
-Key performance indicators:
+KPIs:
+- Product Quantity
+- VendorPerProduct
+- CountOfVendor by PostalCode
+### Question 2: What is the status of the product in terms of current quantity, safety stock?
+
+KPIs:
+- Product Quantity
+- SafetyStockLevel
+### Question 3: Do we need to make a purchase for the specific product?
+
+KPIs:
+- MakePurchase
+
+
+Formula:
 - Product Quantity: present the quantity of each product.
 - Count of ProductID: this KPI counts all of the product ID.
 - Value on Hand: the monetary value of all of the stocks in the inventory.
@@ -53,13 +66,48 @@ Formula: MakePurchase = “Urgent” if “Quantity” < “SafetyStock”
 Formula: VendorPerProduct = Count(Vendor of a specific product)
 - CountOfVendor by PostalCode: present the number of vendors related to each postal code. This KPI can help define the nearest or the most suitable vendor based on the location.
 ## Procurement Performance
-- Question 1: Who are our vendors? 
-- Question 2: Which are our best partners, which are our potential vendors? 
-- Question 3: What products do they supply us? Do we have to find the additional or alternative suppliers? 
-- Question 4:Can we choose the vendors based on some indicators such as price, lead time, quality or order rejected by vendor, product return rate? 
-- Question 5: What is the appropriate price for the product? 
-- Question 6: What is the trend in price of the product? How can we choose the right vendor in terms of pricing?
+### Question 1: Who are our vendors?
 
+KPIs:
+- TotalNumberOfPO (indirectly through vendor-related purchase orders)
+- AveragePriceByVendor (provides vendor-specific information)
+- POSuccessRate (indirectly through successful purchase orders related to vendors)
+### Question 2: Which are our best partners, which are our potential vendors?
+
+KPIs:
+- POSuccessRate
+- POReturnRate
+- POLeadTime
+- AveragePOLeadTime
+- CreditRating
+### Question 3: What products do they supply us? Do we have to find the additional or alternative suppliers?
+
+KPIs:
+- TotalNumberOfPO (indicates product-specific purchase orders)
+- AveragePriceByVendor (indicates products and their pricing by vendor)
+- POReturnRate (quality indicator for products from specific vendors)
+- VendorPerProduct (indicates dependency on specific vendors, identifying need for alternatives)
+### Question 4: Can we choose the vendors based on some indicators such as price, lead time, quality or order rejected by vendor, product return rate?
+
+KPIs:
+- AveragePriceByVendor
+- POSuccessRate
+- POReturnRate
+- POLeadTime
+ -AveragePOLeadTime
+- CreditRating
+### Question 5: What is the appropriate price for the product?
+
+KPIs:
+- AveragePrice
+- AveragePriceByVendor
+### Question 6: What is the trend in price of the product? How can we choose the right vendor in terms of pricing?
+KPIs:
+- AveragePrice
+- AveragePriceByVendor
+### Formula:
+- AveragePrice
+- AveragePriceByVendor
 Key performance indicators:
 - TotalNumberOfPO: present the number of purchase orders.
 - TotalPurchaseAmount: present the total purchase amount that the company spent.
